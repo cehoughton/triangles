@@ -4,7 +4,13 @@
 
 #if($myTriangles.isNotTriangle())
   <p><h3>Your triangle is not a triangle</p></h3>
+#elseif ($myTriangles.isEqualateral())
+  <p><h3>Your triangle is equalateral</h3></p>
+#elseif ($myTriangles.isScalene())
+  <p><h3>Your triangle is a scaly scalene!</h3></p>
+#elseif ($myTriangles.isIsoceles())
+  <p><h3>Your triangle is isoceles</h3></p>
 
 #else
-
+<h3> broken</h3>
 #end

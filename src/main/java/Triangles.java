@@ -24,19 +24,21 @@ public class Triangles {
     return mSideThree;
   }
 
+   public boolean isNotTriangle() {
+      return (((mSideOne + mSideTwo) <= mSideThree) || ((mSideOne + mSideThree) <= mSideTwo) || ((mSideTwo + mSideThree) <= mSideOne));
+    }
+
   public boolean isScalene() {
     return ((mSideOne != mSideTwo) && (mSideTwo != mSideThree) && (mSideOne != mSideThree));
   }
 
   public boolean isEqualateral() {
-    return ((mSideOne == mSideTwo) && (mSideTwo == mSideThree));
+    return ((mSideOne == mSideTwo) && (mSideOne == mSideThree));
   }
   public boolean isIsoceles() {
     return (((mSideOne == mSideTwo) && (mSideOne != mSideThree)) || ((mSideTwo == mSideThree) && (mSideTwo != mSideOne)) || ((mSideThree == mSideOne) && (mSideThree != mSideTwo)));
   }
 
-  public boolean isNotTriangle() {
-    return (((mSideOne + mSideTwo) < mSideThree) || ((mSideOne + mSideThree) < mSideTwo) || ((mSideTwo + mSideThree) < mSideOne));
-  }
+
 
 }
