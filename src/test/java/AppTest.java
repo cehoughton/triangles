@@ -22,4 +22,14 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567");
     assertThat(pageSource()).contains("Triangle Finder");
   }
+
+  @Test
+  public void triangleTestIsNotATriangle() {
+    goTo("http://localhost:4567/");
+    fill("#sideOneIn").with("2");
+    fill("#sideTwoIn").with("2");
+    fill("#sideThreeIn").with("8");
+    submit(".btn");
+    assertThat(pageSource()).contains("Your triangle is not a triangle");
+  }
 }

@@ -15,5 +15,18 @@ public class App {
       model.put("template", "templates/home.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    get("/triangles", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      int sideOne = Integer.parseInt(request.queryParams("sideOneIn"));
+      int sideTwo = Integer.parseInt(request.queryParams("sideTwoIn"));
+      int sideThree = Integer.parseInt(request.queryParams("sideThreeIn"));
+
+      Triangles myTriangles = new Triangles( sideOne, sideTwo, sideThree );
+      model.put("myTriangles", myTriangles);
+
+      model.put("template", "templates/triangles.vtl");
+      return new ModelAndView( model, layout);
+    }, new VelocityTemplateEngine());
   }
 }
